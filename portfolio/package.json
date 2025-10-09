@@ -1,0 +1,25 @@
+{
+  "name": "portfolio",
+  "version": "1.0.0",
+  "description": "A personal portfolio website",
+  "main": "src/main.js",
+  "scripts": {
+    "build": "postcss src/styles/input.css -o dist/styles.css",
+    "watch": "postcss src/styles/input.css -o dist/styles.css --watch",
+    "start": "live-server"
+  },
+  "author": "Your Name",
+  "license": "MIT",
+  "dependencies": {
+    "tailwindcss": "^2.2.19",
+    "postcss": "^8.4.6",
+    "autoprefixer": "^10.4.2",
+    "live-server": "^1.2.1"
+  },
+  "devDependencies": {},
+  "keywords": [
+    "portfolio",
+    "website",
+    "tailwindcss"
+  ]
+}
