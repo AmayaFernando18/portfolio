@@ -50,20 +50,12 @@ const dummyProjects = [
     title: "TravelTales – Travel Review Web Application",
     description: "A full-stack travel review platform built with Laravel and MySQL, allowing users to explore travel destinations and share authentic experiences. It supports user authentication, review CRUD operations, and an admin panel to manage places and moderate reviews through a clean, user-friendly interface.",
     images: [
-      '/project4_1.jpeg',
-      '/project4_2.jpeg',
-      '/project4_3.jpeg',
-      '/project4_4.jpeg'
+      '/project4_1.jpg',
+      '/project4_2.jpg',
+      '/project4_3.jpg',
+      '/project4_4.jpg'
     ],
-    github: "https://github.com/AmayaFernando18/project-postCreate"
-  },
-  {
-    title: "MoneyMesh – Personal Finance & Expense Tracker (Ongoing)",
-    description: "A mobile application built with React Native, Node.js, and PostgreSQL to track daily expenses across multiple payment methods, manage budgets and credit cards with alerts, and generate insightful financial reports with smart spending suggestions.",
-    images: [
-      '/project5_1.png'
-    ],
-    github: "https://github.com/AmayaFernando18/MoneyMesh"
+    github: "https://github.com/AmayaFernando18/TravelTales"
   }
 ];
 
@@ -157,8 +149,6 @@ const ProjectCard = ({ project }) => {
 };
 
 const Projects = () => {
-  const [currentProjectIndex, setCurrentProjectIndex] = useState(0);
-
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -173,7 +163,7 @@ const Projects = () => {
         transition={{ delay: 0.3, duration: 0.5 }}
         className="text-center mb-2 text-lg font-Ovo"
       >
-        
+        What I Offer
       </motion.h4>
 
       <motion.h2
@@ -189,75 +179,15 @@ const Projects = () => {
         Here’s where curiosity meets creation — a showcase of projects that blend technology, creativity, and purpose.
       </p>
 
-      {/* Horizontal Carousel */}
       <motion.div
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ delay: 0.9, duration: 1 }}
-        className="relative mt-10"
+        className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mt-10"
       >
-        <div className="flex items-center justify-center gap-4 sm:gap-6">
-          {/* Previous Button */}
-          <button
-            onClick={() => setCurrentProjectIndex((prev) =>
-              prev === 0 ? dummyProjects.length - 1 : prev - 1
-            )}
-            className="flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 rounded-full border border-gray-400 
-                     hover:bg-lightHover dark:hover:bg-darkHover hover:shadow-black dark:hover:shadow-white
-                     transition-all duration-300 text-lg sm:text-xl font-bold text-gray-700 dark:text-gray-200
-                     hover:scale-110 active:scale-95 flex-shrink-0"
-          >
-            &lt;
-          </button>
-
-          {/* Project Card */}
-          <div className="flex-1 flex justify-center">
-            <motion.div
-              key={currentProjectIndex}
-              initial={{ opacity: 0, x: 50 }}
-              animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: -50 }}
-              transition={{ duration: 0.5 }}
-              className="w-full"
-            >
-              <ProjectCard project={dummyProjects[currentProjectIndex]} />
-            </motion.div>
-          </div>
-
-          {/* Next Button */}
-          <button
-            onClick={() => setCurrentProjectIndex((prev) =>
-              prev === dummyProjects.length - 1 ? 0 : prev + 1
-            )}
-            className="flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 rounded-full border border-gray-400 
-                     hover:bg-lightHover dark:hover:bg-darkHover hover:shadow-black dark:hover:shadow-white
-                     transition-all duration-300 text-lg sm:text-xl font-bold text-gray-700 dark:text-gray-200
-                     hover:scale-110 active:scale-95 flex-shrink-0"
-          >
-            &gt;
-          </button>
-        </div>
-
-        {/* Project Indicator Dots */}
-        <div className="flex justify-center items-center gap-2 mt-8">
-          {dummyProjects.map((_, idx) => (
-            <button
-              key={idx}
-              onClick={() => setCurrentProjectIndex(idx)}
-              className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                idx === currentProjectIndex
-                  ? 'bg-black dark:bg-white w-8'
-                  : 'bg-gray-400 dark:bg-gray-600 hover:bg-gray-500'
-              }`}
-              aria-label={`Go to project ${idx + 1}`}
-            />
-          ))}
-        </div>
-
-        {/* Project Counter */}
-        <div className="text-center mt-4 text-gray-600 dark:text-gray-400 text-sm">
-          Project {currentProjectIndex + 1} of {dummyProjects.length}
-        </div>
+        {dummyProjects.map((project, index) => (
+          <ProjectCard key={index} project={project} />
+        ))}
       </motion.div>
     </motion.div>
   );

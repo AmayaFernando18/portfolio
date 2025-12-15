@@ -105,11 +105,14 @@ const About = ({ isDarkMode }) => {
                 : 'bg-white hover:bg-lightHover hover:shadow-black'
             }`}
           >
-            <p className={`text-lg sm:text-xl font-semibold ${
-              isDarkMode ? 'text-gray-100' : 'text-gray-800'
-            }`}>
-              Always eager to learn, always ready to innovate.
-            </p>
+            <div className="flex items-center gap-4">
+              <span className="text-4xl">⚡</span>
+              <span className={`text-lg sm:text-xl font-semibold ${
+                isDarkMode ? 'text-gray-100' : 'text-gray-800'
+              }`}>
+                Always eager to learn, always ready to innovate.
+              </span>
+            </div>
           </motion.div>
 
         

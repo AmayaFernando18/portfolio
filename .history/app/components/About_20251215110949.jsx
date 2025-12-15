@@ -98,18 +98,32 @@ const About = ({ isDarkMode }) => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 1.3 }}
-            whileHover={{ scale: 1.02, y: -5 }}
-            className={`border border-gray-400 rounded-lg px-6 py-8 cursor-pointer transition-all duration-500 ${
+            className={`relative overflow-hidden rounded-3xl border-2 p-8 ${
               isDarkMode 
-                ? 'bg-gray-800 hover:bg-darkHover hover:shadow-white' 
-                : 'bg-white hover:bg-lightHover hover:shadow-black'
+                ? 'bg-gradient-to-r from-gray-800 via-gray-800 to-gray-900 border-lime-400/30 shadow-lg shadow-lime-400/10' 
+                : 'bg-gradient-to-r from-white via-gray-50 to-white border-lime-400/40 shadow-lg shadow-lime-400/20'
             }`}
           >
-            <p className={`text-lg sm:text-xl font-semibold ${
-              isDarkMode ? 'text-gray-100' : 'text-gray-800'
-            }`}>
-              Always eager to learn, always ready to innovate.
-            </p>
+            {/* Animated background accent */}
+            <div className={`absolute -top-1 -left-1 w-32 h-32 rounded-full blur-2xl opacity-20 ${
+              isDarkMode ? 'bg-lime-400' : 'bg-lime-300'
+            }`}></div>
+            <div className={`absolute -bottom-1 -right-1 w-32 h-32 rounded-full blur-2xl opacity-20 ${
+              isDarkMode ? 'bg-lime-400' : 'bg-lime-300'
+            }`}></div>
+            
+            <div className="relative z-10 flex items-center gap-4">
+              <span className={`text-4xl animate-bounce ${isDarkMode ? 'text-lime-400' : 'text-lime-500'}`}>
+                ⚡
+              </span>
+              <span className={`text-xl sm:text-2xl font-semibold tracking-wide ${
+                isDarkMode 
+                  ? 'text-transparent bg-clip-text bg-gradient-to-r from-lime-400 to-lime-300' 
+                  : 'text-transparent bg-clip-text bg-gradient-to-r from-lime-600 to-lime-500'
+              }`}>
+                Always eager to learn, always ready to innovate.
+              </span>
+            </div>
           </motion.div>
 
         

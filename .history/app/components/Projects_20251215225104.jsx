@@ -55,7 +55,7 @@ const dummyProjects = [
       '/project4_3.jpeg',
       '/project4_4.jpeg'
     ],
-    github: "https://github.com/AmayaFernando18/project-postCreate"
+    github: "https://github.com/AmayaFernando18/TravelTales"
   },
   {
     title: "MoneyMesh – Personal Finance & Expense Tracker (Ongoing)",

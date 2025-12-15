@@ -18,7 +18,7 @@ const dummyProjects = [
       '/project1_9.jpg'
 
     ],
-    github: "https://github.com/AmayaFernando18/EVEROLA-react-frondend"
+    frontend: "https://github.com/AmayaFernando18/EVEROLA-react-frondend"
   },
   {
     title: "QuickAI – AI Powered Web Application ",

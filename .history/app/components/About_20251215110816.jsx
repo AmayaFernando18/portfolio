@@ -98,18 +98,20 @@ const About = ({ isDarkMode }) => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 1.3 }}
-            whileHover={{ scale: 1.02, y: -5 }}
-            className={`border border-gray-400 rounded-lg px-6 py-8 cursor-pointer transition-all duration-500 ${
+            className={`relative pb-5 rounded-2xl ${
               isDarkMode 
-                ? 'bg-gray-800 hover:bg-darkHover hover:shadow-white' 
-                : 'bg-white hover:bg-lightHover hover:shadow-black'
+                ? 'bg-gradient-to-br from-gray-800 to-gray-900 border border-gray-700' 
+                : 'bg-gradient-to-br from-white to-gray-50 border border-gray-200 shadow-sm'
             }`}
           >
-            <p className={`text-lg sm:text-xl font-semibold ${
-              isDarkMode ? 'text-gray-100' : 'text-gray-800'
-            }`}>
-              Always eager to learn, always ready to innovate.
-            </p>
+           
+            
+            <div className="flex items-center gap-3 mt-6 pl-8">
+              <span className="text-2xl">⚡</span>
+              <span className={`font-medium ${isDarkMode ? 'text-gray-200' : 'text-gray-800'}`}>
+                 Always eager to learn, always ready to innovate.
+              </span>
+            </div>
           </motion.div>
 
         

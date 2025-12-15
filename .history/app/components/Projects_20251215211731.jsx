@@ -55,15 +55,7 @@ const dummyProjects = [
       '/project4_3.jpeg',
       '/project4_4.jpeg'
     ],
-    github: "https://github.com/AmayaFernando18/project-postCreate"
-  },
-  {
-    title: "MoneyMesh – Personal Finance & Expense Tracker (Ongoing)",
-    description: "A mobile application built with React Native, Node.js, and PostgreSQL to track daily expenses across multiple payment methods, manage budgets and credit cards with alerts, and generate insightful financial reports with smart spending suggestions.",
-    images: [
-      '/project5_1.png'
-    ],
-    github: "https://github.com/AmayaFernando18/MoneyMesh"
+    github: "https://github.com/AmayaFernando18/TravelTales"
   }
 ];
 
@@ -173,7 +165,7 @@ const Projects = () => {
         transition={{ delay: 0.3, duration: 0.5 }}
         className="text-center mb-2 text-lg font-Ovo"
       >
-        
+        What I Offer
       </motion.h4>
 
       <motion.h2
